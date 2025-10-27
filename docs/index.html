@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teste de Domínio</title>
+  <style>body{font-family:Segoe UI,Arial;margin:2rem}</style>
+</head>
+<body>
+  <h1>Teste de Domínio</h1>
+  <ul>
+    <li><strong>Host (window.location.host):</strong> <span id="host"></span></li>
+    <li><strong>IP público (via ipify):</strong> <span id="ip">carregando…</span></li>
+    <li><strong>Timestamp (local):</strong> <span id="ts"></span></li>
+  </ul>
+  <p>Abra https://seu-dominio/ para validar apontamento.</p>
+
+  <script>
+    document.getElementById('host').textContent = window.location.host;
+    document.getElementById('ts').textContent = new Date().toISOString();
+    fetch('https://api.ipify.org?format=json')
+      .then(r => r.json())
+      .then(j => document.getElementById('ip').textContent = j.ip)
+      .catch(_ => document.getElementById('ip').textContent = 'falha ao obter IP');
+  </script>
+</body>
+</html>
