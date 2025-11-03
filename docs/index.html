@@ -12,6 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Modal de Instalação -->
+    <div class="modal-overlay" id="installModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Fechar">×</button>
+            <div class="modal-header">
+                <div class="modal-icon">📱</div>
+                <h2 class="modal-title" data-pt="Instalar Eco Habits" data-en="Install Eco Habits">Instalar Eco Habits</h2>
+                <p class="modal-subtitle" data-pt="Escolhe a plataforma para instalar a aplicação" data-en="Choose the platform to install the app">
+                    Escolhe a plataforma para instalar a aplicação
+                </p>
+            </div>
+            <div class="modal-stores">
+                <button class="store-btn" data-store="google">
+                    <div class="store-icon">📱</div>
+                    <div class="store-info">
+                        <h3 data-pt="Disponível na" data-en="Available on">Disponível na</h3>
+                        <p>Google Play</p>
+                    </div>
+                </button>
+                <button class="store-btn" data-store="apple">
+                    <div class="store-icon">🍎</div>
+                    <div class="store-info">
+                        <h3 data-pt="Disponível na" data-en="Available on">Disponível na</h3>
+                        <p>App Store</p>
+                    </div>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+
     <!-- Navegação -->
     <nav class="navbar">
         <div class="container">
@@ -26,6 +57,12 @@
                     <li><a href="pages/funcionalidades.html" data-pt="Funcionalidades" data-en="Features">Funcionalidades</a></li>
                     <li><a href="pages/equipa.html" data-pt="Equipa" data-en="Team">Equipa</a></li>
                     <li><a href="pages/contexto.html" data-pt="Contexto" data-en="Context">Contexto</a></li>
+                    <li>
+                        <button class="lang-btn" id="installBtn" style="margin-right: 1rem;">
+                            <span>📱</span>
+                            <span data-pt="Instalar" data-en="Install">Instalar</span>
+                        </button>
+                    </li>
                     <li class="language-switcher">
                         <button id="langBtn" class="lang-btn" aria-label="Alternar idioma">
                             <span id="currentLang">PT</span>
@@ -59,7 +96,10 @@
                         Junta-te a uma comunidade que torna a sustentabilidade acessível, divertida e gratificante. Pequenos hábitos, grande impacto.
                     </p>
                     <div class="hero-buttons">
-                        <a href="pages/sobre.html" class="btn btn-primary" data-pt="Descobre Mais" data-en="Learn More">Descobre Mais</a>
+                        <button class="btn btn-primary" id="installAppBtn">
+                            <span>📱</span>
+                            <span data-pt="Instalar Aplicação" data-en="Install App">Instalar Aplicação</span>
+                        </button>
                         <a href="pages/funcionalidades.html" class="btn btn-secondary" data-pt="Ver Funcionalidades" data-en="View Features">Ver Funcionalidades</a>
                     </div>
                     <div class="hero-stats">
@@ -86,24 +126,42 @@
                                     <span class="app-title">Eco Habits</span>
                                 </div>
                                 <div class="app-content">
-                                    <div class="challenge-card">
-                                        <span class="challenge-icon">♻️</span>
-                                        <div class="challenge-info">
-                                            <h4 data-pt="Desafio do Dia" data-en="Daily Challenge">Desafio do Dia</h4>
-                                            <p data-pt="Separa o teu lixo corretamente" data-en="Sort your waste correctly">Separa o teu lixo corretamente</p>
+                                    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                            <span style="font-size: 2rem;">🎯</span>
+                                            <div>
+                                                <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.25rem;" data-pt="Desafio do Dia" data-en="Daily Challenge">Desafio do Dia</h4>
+                                                <p style="font-size: 0.75rem; color: var(--gray-700); margin: 0;" data-pt="Recicla pelo menos 3 itens hoje" data-en="Recycle at least 3 items today">Recicla pelo menos 3 itens hoje</p>
+                                            </div>
+                                        </div>
+                                        <div style="background: white; padding: 0.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                            <span style="font-size: 0.75rem; color: var(--gray-700);" data-pt="Progresso" data-en="Progress">Progresso</span>
+                                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary-green);">2/3</span>
                                         </div>
                                     </div>
-                                    <div class="progress-ring">
-                                        <svg width="120" height="120">
-                                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e5e7eb" stroke-width="8"/>
-                                            <circle cx="60" cy="60" r="54" fill="none" stroke="#10b981" stroke-width="8" 
-                                                    stroke-dasharray="339.292" stroke-dashoffset="84.823" 
-                                                    transform="rotate(-90 60 60)"/>
-                                        </svg>
-                                        <div class="progress-text">
-                                            <span class="progress-value">75%</span>
-                                            <span class="progress-label" data-pt="Completo" data-en="Complete">Completo</span>
+                                    
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+                                        <div style="background: white; padding: 0.875rem; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center;">
+                                            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💧</div>
+                                            <div style="font-size: 1.25rem; font-weight: 700; color: var(--primary-green);">847L</div>
+                                            <div style="font-size: 0.7rem; color: var(--gray-600);" data-pt="Água poupada" data-en="Water saved">Água poupada</div>
                                         </div>
+                                        <div style="background: white; padding: 0.875rem; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center;">
+                                            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🌍</div>
+                                            <div style="font-size: 1.25rem; font-weight: 700; color: var(--secondary-blue);">34kg</div>
+                                            <div style="font-size: 0.7rem; color: var(--gray-600);" data-pt="CO₂ evitado" data-en="CO₂ avoided">CO₂ evitado</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1rem; border-radius: 12px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                            <span style="font-size: 0.8rem; font-weight: 600; color: var(--gray-800);" data-pt="Nível 5: Eco Entusiasta" data-en="Level 5: Eco Enthusiast">Nível 5: Eco Entusiasta</span>
+                                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--secondary-blue);">78%</span>
+                                        </div>
+                                        <div style="background: white; height: 8px; border-radius: 4px; overflow: hidden;">
+                                            <div style="background: var(--secondary-blue); width: 78%; height: 100%;"></div>
+                                        </div>
+                                        <div style="font-size: 0.7rem; color: var(--gray-700); margin-top: 0.5rem; text-align: center;" data-pt="220 pontos até o próximo nível" data-en="220 points to next level">220 pontos até o próximo nível</div>
                                     </div>
                                 </div>
                             </div>
@@ -290,5 +348,53 @@
     <!-- Scripts -->
     <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Script do Modal -->
+    <script>
+        // Elementos do modal
+        const installModal = document.getElementById('installModal');
+        const installBtn = document.getElementById('installBtn');
+        const installAppBtn = document.getElementById('installAppBtn');
+        const closeModal = document.getElementById('closeModal');
+        const storeBtns = document.querySelectorAll('.store-btn');
+
+        // Função para abrir o modal
+        function openModal() {
+            installModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Função para fechar o modal
+        function closeModalFunc() {
+            installModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners
+        installBtn.addEventListener('click', openModal);
+        installAppBtn.addEventListener('click', openModal);
+        closeModal.addEventListener('click', closeModalFunc);
+
+        // Fechar modal ao clicar fora
+        installModal.addEventListener('click', function(e) {
+            if (e.target === installModal) {
+                closeModalFunc();
+            }
+        });
+
+        // Fechar modal com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && installModal.classList.contains('active')) {
+                closeModalFunc();
+            }
+        });
+
+        // Botões das stores (não fazem nada, apenas visual)
+        storeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                console.log('App em desenvolvimento - Store:', this.dataset.store);
+            });
+        });
+    </script>
 </body>
 </html>
