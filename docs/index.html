@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Eco Habits - Plataforma digital que transforma consciência ambiental em ações sustentáveis quotidianas">
-    <meta name="keywords" content="sustentabilidade, ecologia, hábitos sustentáveis, ambiente">
     <title>Eco Habits - Transforma o Teu Quotidiano</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,14 +23,14 @@
                 </p>
             </div>
             <div class="modal-stores">
-                <button class="store-btn" data-store="google">
+                <button class="store-btn">
                     <div class="store-icon">📱</div>
                     <div class="store-info">
                         <h3 data-pt="Disponível na" data-en="Available on">Disponível na</h3>
                         <p>Google Play</p>
                     </div>
                 </button>
-                <button class="store-btn" data-store="apple">
+                <button class="store-btn">
                     <div class="store-icon">🍎</div>
                     <div class="store-info">
                         <h3 data-pt="Disponível na" data-en="Available on">Disponível na</h3>
@@ -39,38 +38,42 @@
                     </div>
                 </button>
             </div>
-            
+            <div class="modal-note">
+                <p data-pt="A aplicação está em desenvolvimento. Em breve estará disponível para download." data-en="The app is under development. It will be available for download soon.">
+                    A aplicação está em desenvolvimento. Em breve estará disponível para download.
+                </p>
+            </div>
         </div>
     </div>
 
     <!-- Navegação -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo">
+                <a href="#home" class="logo">
                     <span class="logo-icon">🌱</span>
                     <span class="logo-text">Eco Habits</span>
                 </a>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="active" data-pt="Início" data-en="Home">Início</a></li>
-                    <li><a href="pages/sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
-                    <li><a href="pages/funcionalidades.html" data-pt="Funcionalidades" data-en="Features">Funcionalidades</a></li>
-                    <li><a href="pages/equipa.html" data-pt="Equipa" data-en="Team">Equipa</a></li>
-                    <li><a href="pages/contexto.html" data-pt="Contexto" data-en="Context">Contexto</a></li>
+                    <li><a href="#home" data-pt="Início" data-en="Home">Início</a></li>
+                    <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+                    <li><a href="#funcionalidades" data-pt="Funcionalidades" data-en="Features">Funcionalidades</a></li>
+                    <li><a href="#equipa" data-pt="Equipa" data-en="Team">Equipa</a></li>
+                    <li><a href="#contexto" data-pt="Contexto" data-en="Context">Contexto</a></li>
                     <li>
-                        <button class="lang-btn" id="installBtn" style="margin-right: 1rem;">
+                        <button class="btn-install" id="installBtn">
                             <span>📱</span>
                             <span data-pt="Instalar" data-en="Install">Instalar</span>
                         </button>
                     </li>
-                    <li class="language-switcher">
+                    <li>
                         <button id="langBtn" class="lang-btn" aria-label="Alternar idioma">
                             <span id="currentLang">PT</span>
                             <span class="lang-icon">🌐</span>
                         </button>
                     </li>
                 </ul>
-                <div class="hamburger" id="hamburger" aria-label="Menu">
+                <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -80,7 +83,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-background">
             <div class="hero-shape shape-1"></div>
             <div class="hero-shape shape-2"></div>
@@ -88,7 +91,7 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text" data-aos="fade-right">
+                <div class="hero-text">
                     <h1 class="hero-title" data-pt="Transforma o Teu Quotidiano em Ações Sustentáveis" data-en="Transform Your Daily Life into Sustainable Actions">
                         Transforma o Teu Quotidiano em Ações Sustentáveis
                     </h1>
@@ -100,7 +103,7 @@
                             <span>📱</span>
                             <span data-pt="Instalar Aplicação" data-en="Install App">Instalar Aplicação</span>
                         </button>
-                        <a href="pages/funcionalidades.html" class="btn btn-secondary" data-pt="Ver Funcionalidades" data-en="View Features">Ver Funcionalidades</a>
+                        <a href="#funcionalidades" class="btn btn-secondary" data-pt="Ver Funcionalidades" data-en="View Features">Ver Funcionalidades</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-badge">
@@ -117,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-visual" data-aos="fade-left">
+                <div class="hero-visual">
                     <div class="phone-mockup">
                         <div class="phone-screen">
                             <div class="app-preview">
@@ -125,181 +128,212 @@
                                     <span class="app-time">09:41</span>
                                     <span class="app-title">Eco Habits</span>
                                 </div>
-                                <div class="app-content">
-                                    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
-                                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                            <span style="font-size: 2rem;">🎯</span>
-                                            <div>
-                                                <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.25rem;" data-pt="Desafio do Dia" data-en="Daily Challenge">Desafio do Dia</h4>
-                                                <p style="font-size: 0.75rem; color: var(--gray-700); margin: 0;" data-pt="Recicla pelo menos 3 itens hoje" data-en="Recycle at least 3 items today">Recicla pelo menos 3 itens hoje</p>
-                                            </div>
-                                        </div>
-                                        <div style="background: white; padding: 0.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
-                                            <span style="font-size: 0.75rem; color: var(--gray-700);" data-pt="Progresso" data-en="Progress">Progresso</span>
-                                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary-green);">2/3</span>
-                                        </div>
+                                <div class="challenge-card">
+                                    <span class="challenge-icon">🎯</span>
+                                    <div class="challenge-info">
+                                        <h4 data-pt="Desafio do Dia" data-en="Daily Challenge">Desafio do Dia</h4>
+                                        <p data-pt="Recicla 3 itens hoje" data-en="Recycle 3 items today">Recicla 3 itens hoje</p>
                                     </div>
-                                    
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
-                                        <div style="background: white; padding: 0.875rem; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center;">
-                                            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💧</div>
-                                            <div style="font-size: 1.25rem; font-weight: 700; color: var(--primary-green);">847L</div>
-                                            <div style="font-size: 0.7rem; color: var(--gray-600);" data-pt="Água poupada" data-en="Water saved">Água poupada</div>
-                                        </div>
-                                        <div style="background: white; padding: 0.875rem; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center;">
-                                            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🌍</div>
-                                            <div style="font-size: 1.25rem; font-weight: 700; color: var(--secondary-blue);">34kg</div>
-                                            <div style="font-size: 0.7rem; color: var(--gray-600);" data-pt="CO₂ evitado" data-en="CO₂ avoided">CO₂ evitado</div>
-                                        </div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stat-card">
+                                        <div class="stat-icon">💧</div>
+                                        <div class="stat-value">847L</div>
+                                        <div class="stat-name" data-pt="Água poupada" data-en="Water saved">Água poupada</div>
                                     </div>
-                                    
-                                    <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1rem; border-radius: 12px;">
-                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                            <span style="font-size: 0.8rem; font-weight: 600; color: var(--gray-800);" data-pt="Nível 5: Eco Entusiasta" data-en="Level 5: Eco Enthusiast">Nível 5: Eco Entusiasta</span>
-                                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--secondary-blue);">78%</span>
-                                        </div>
-                                        <div style="background: white; height: 8px; border-radius: 4px; overflow: hidden;">
-                                            <div style="background: var(--secondary-blue); width: 78%; height: 100%;"></div>
-                                        </div>
-                                        <div style="font-size: 0.7rem; color: var(--gray-700); margin-top: 0.5rem; text-align: center;" data-pt="220 pontos até o próximo nível" data-en="220 points to next level">220 pontos até o próximo nível</div>
+                                    <div class="stat-card">
+                                        <div class="stat-icon">🌍</div>
+                                        <div class="stat-value">34kg</div>
+                                        <div class="stat-name" data-pt="CO₂ evitado" data-en="CO₂ avoided">CO₂ evitado</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="800">
-            <span class="scroll-text" data-pt="Explora" data-en="Explore">Explora</span>
-            <div class="scroll-arrow"></div>
-        </div>
     </section>
 
-    <!-- Sobre Resumo -->
-    <section class="about-preview">
+    <!-- Sobre -->
+    <section class="about-section" id="sobre">
         <div class="container">
-            <div class="content-split">
-                <div class="content-text" data-aos="fade-right">
-                    <span class="section-tag" data-pt="Quem Somos" data-en="Who We Are">Quem Somos</span>
-                    <h2 class="section-title" data-pt="Uma Nova Forma de Viver Sustentável" data-en="A New Way to Live Sustainably">
-                        Uma Nova Forma de Viver Sustentável
-                    </h2>
-                    <p data-pt="O Eco Habits nasceu da necessidade de transformar preocupação ambiental em ação concreta. Desenvolvemos uma plataforma que torna os hábitos sustentáveis naturais, gratificantes e, acima de tudo, eficazes." data-en="Eco Habits was born from the need to transform environmental concern into concrete action. We developed a platform that makes sustainable habits natural, rewarding and, above all, effective.">
-                        O Eco Habits nasceu da necessidade de transformar preocupação ambiental em ação concreta. Desenvolvemos uma plataforma que torna os hábitos sustentáveis naturais, gratificantes e, acima de tudo, eficazes.
+            <div class="section-header">
+                <span class="section-tag" data-pt="Quem Somos" data-en="Who We Are">Quem Somos</span>
+                <h2 class="section-title" data-pt="Sobre o Eco Habits" data-en="About Eco Habits">Sobre o Eco Habits</h2>
+            </div>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p data-pt="O Eco Habits é uma plataforma digital que transforma a tua consciência ambiental em ações concretas. Através de desafios personalizados, monitorização de impacto e uma comunidade ativa, tornamos a sustentabilidade acessível e gratificante." data-en="Eco Habits is a digital platform that transforms your environmental awareness into concrete actions. Through personalized challenges, impact monitoring and an active community, we make sustainability accessible and rewarding.">
+                        O Eco Habits é uma plataforma digital que transforma a tua consciência ambiental em ações concretas. Através de desafios personalizados, monitorização de impacto e uma comunidade ativa, tornamos a sustentabilidade acessível e gratificante.
                     </p>
-                    <ul class="feature-list">
-                        <li data-pt="Abordagem integrada a múltiplas áreas da sustentabilidade" data-en="Integrated approach to multiple areas of sustainability">Abordagem integrada a múltiplas áreas da sustentabilidade</li>
-                        <li data-pt="Desafios personalizados que evoluem contigo" data-en="Personalized challenges that evolve with you">Desafios personalizados que evoluem contigo</li>
-                        <li data-pt="Comunidade ativa e motivadora" data-en="Active and motivating community">Comunidade ativa e motivadora</li>
-                    </ul>
-                    <a href="pages/sobre.html" class="btn btn-outline" data-pt="Saber Mais" data-en="Learn More">Saber Mais</a>
+                    <p data-pt="Combinamos educação ambiental e tecnologia para criar uma experiência única que motiva mudanças reais no quotidiano de cada utilizador." data-en="We combine gamification, environmental education and technology to create a unique experience that motivates real changes in each user's daily life.">
+                        Combinamos  educação ambiental e tecnologia para criar uma experiência única que motiva mudanças reais no quotidiano de cada utilizador.
+                    </p>
                 </div>
-                <div class="content-visual" data-aos="fade-left">
-                    <div class="visual-grid">
-                        <div class="visual-card card-green">
-                            <div class="card-icon-large">🌱</div>
-                            <h3 data-pt="Missão" data-en="Mission">Missão</h3>
-                            <p data-pt="Capacitar pessoas a adotarem estilos de vida sustentáveis" data-en="Empower people to adopt sustainable lifestyles">Capacitar pessoas a adotarem estilos de vida sustentáveis</p>
-                        </div>
-                        <div class="visual-card card-blue">
-                            <div class="card-icon-large">🎯</div>
-                            <h3 data-pt="Visão" data-en="Vision">Visão</h3>
-                            <p data-pt="Um futuro onde a sustentabilidade é o normal" data-en="A future where sustainability is the norm">Um futuro onde a sustentabilidade é o normal</p>
-                        </div>
-                        <div class="visual-card card-orange">
-                            <div class="card-icon-large">💚</div>
-                            <h3 data-pt="Valores" data-en="Values">Valores</h3>
-                            <p data-pt="Comunidade, transparência e impacto real" data-en="Community, transparency and real impact">Comunidade, transparência e impacto real</p>
-                        </div>
+                <div class="vision-cards">
+                    <div class="vision-card">
+                        <div class="card-icon">🌱</div>
+                        <h3 data-pt="Missão" data-en="Mission">Missão</h3>
+                        <p data-pt="Capacitar pessoas a adotarem estilos de vida sustentáveis" data-en="Empower people to adopt sustainable lifestyles">Capacitar pessoas a adotarem estilos de vida sustentáveis</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="card-icon">🎯</div>
+                        <h3 data-pt="Visão" data-en="Vision">Visão</h3>
+                        <p data-pt="Um futuro onde a sustentabilidade é o normal" data-en="A future where sustainability is the norm">Um futuro onde a sustentabilidade é o normal</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="card-icon">💚</div>
+                        <h3 data-pt="Valores" data-en="Values">Valores</h3>
+                        <p data-pt="Comunidade, transparência e impacto real" data-en="Community, transparency and real impact">Comunidade, transparência e impacto real</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Objetivos em Timeline -->
-    <section class="objectives-timeline">
+    <!-- Funcionalidades -->
+    <section class="features-section" id="funcionalidades">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag" data-pt="Objetivos" data-en="Objectives">Objetivos</span>
-                <h2 class="section-title" data-pt="Como o Eco Habits Faz a Diferença" data-en="How Eco Habits Makes a Difference">
-                    Como o Eco Habits Faz a Diferença
-                </h2>
+            <div class="section-header">
+                <span class="section-tag" data-pt="Funcionalidades" data-en="Features">Funcionalidades</span>
+                <h2 class="section-title" data-pt="O Que Oferecemos" data-en="What We Offer">O Que Oferecemos</h2>
             </div>
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-icon">💡</div>
-                    <div class="timeline-content">
-                        <h3 data-pt="Educar e Informar" data-en="Educate and Inform">Educar e Informar</h3>
-                        <p data-pt="Transmitimos conhecimento sobre o impacto ambiental das escolhas diárias, de forma clara e acessível a todos." data-en="We convey knowledge about the environmental impact of daily choices, in a clear and accessible way for everyone.">
-                            Transmitimos conhecimento sobre o impacto ambiental das escolhas diárias, de forma clara e acessível a todos.
-                        </p>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 data-pt="Desafios Personalizados" data-en="Personalized Challenges">Desafios Personalizados</h3>
+                    <p data-pt="Recebe desafios diários adaptados ao teu perfil e nível de experiência em sustentabilidade." data-en="Receive daily challenges adapted to your profile and experience level in sustainability.">
+                        Recebe desafios diários adaptados ao teu perfil e nível de experiência em sustentabilidade.
+                    </p>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-icon">🎮</div>
-                    <div class="timeline-content">
-                        <h3 data-pt="Motivar e Envolver" data-en="Motivate and Engage">Motivar e Envolver</h3>
-                        <p data-pt="Utilizamos gamificação e recompensas para tornar a jornada sustentável divertida e viciante." data-en="We use gamification and rewards to make the sustainable journey fun and addictive.">
-                            Utilizamos gamificação e recompensas para tornar a jornada sustentável divertida e viciante.
-                        </p>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 data-pt="Monitorização de Impacto" data-en="Impact Monitoring">Monitorização de Impacto</h3>
+                    <p data-pt="Visualiza em tempo real o impacto das tuas ações: água poupada, CO₂ evitado e muito mais." data-en="Visualize in real time the impact of your actions: water saved, CO₂ avoided and much more.">
+                        Visualiza em tempo real o impacto das tuas ações: água poupada, CO₂ evitado e muito mais.
+                    </p>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-icon">📊</div>
-                    <div class="timeline-content">
-                        <h3 data-pt="Medir e Celebrar" data-en="Measure and Celebrate">Medir e Celebrar</h3>
-                        <p data-pt="Mostramos o impacto real de cada ação, transformando números em conquistas tangíveis." data-en="We show the real impact of each action, transforming numbers into tangible achievements.">
-                            Mostramos o impacto real de cada ação, transformando números em conquistas tangíveis.
-                        </p>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 data-pt="Sistema de Recompensas" data-en="Rewards System">Sistema de Recompensas</h3>
+                    <p data-pt="Ganha pontos, desbloqueia emblemas e sobe de nível à medida que completas desafios." data-en="Earn points, unlock badges and level up as you complete challenges.">
+                        Ganha pontos, desbloqueia emblemas e sobe de nível à medida que completas desafios.
+                    </p>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="timeline-icon">🤝</div>
-                    <div class="timeline-content">
-                        <h3 data-pt="Conectar e Crescer" data-en="Connect and Grow">Conectar e Crescer</h3>
-                        <p data-pt="Criamos uma comunidade onde experiências são partilhadas e o apoio mútuo multiplica o impacto." data-en="We create a community where experiences are shared and mutual support multiplies impact.">
-                            Criamos uma comunidade onde experiências são partilhadas e o apoio mútuo multiplica o impacto.
-                        </p>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 data-pt="Comunidade Ativa" data-en="Active Community">Comunidade Ativa</h3>
+                    <p data-pt="Conecta-te com outros utilizadores, partilha experiências e inspira-te mutuamente." data-en="Connect with other users, share experiences and inspire each other.">
+                        Conecta-te com outros utilizadores, partilha experiências e inspira-te mutuamente.
+                    </p>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="timeline-icon">🔄</div>
-                    <div class="timeline-content">
-                        <h3 data-pt="Facilitar e Simplificar" data-en="Facilitate and Simplify">Facilitar e Simplificar</h3>
-                        <p data-pt="Tornamos a transição para um estilo de vida sustentável simples, com sugestões práticas e personalizadas." data-en="We make the transition to a sustainable lifestyle simple, with practical and personalized suggestions.">
-                            Tornamos a transição para um estilo de vida sustentável simples, com sugestões práticas e personalizadas.
-                        </p>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 data-pt="Múltiplas Áreas" data-en="Multiple Areas">Múltiplas Áreas</h3>
+                    <p data-pt="Abrange água, energia, resíduos, mobilidade, alimentação e consumo consciente." data-en="Covers water, energy, waste, mobility, food and conscious consumption.">
+                        Abrange água, energia, resíduos, mobilidade, alimentação e consumo consciente.
+                    </p>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
-                    <div class="timeline-icon">🌍</div>
-                    <div class="timeline-content">
-                        <h3 data-pt="Transformar e Inspirar" data-en="Transform and Inspire">Transformar e Inspirar</h3>
-                        <p data-pt="Inspiramos mudanças duradouras que se propagam além da aplicação, criando um efeito multiplicador." data-en="We inspire lasting changes that spread beyond the app, creating a multiplier effect.">
-                            Inspiramos mudanças duradouras que se propagam além da aplicação, criando um efeito multiplicador.
-                        </p>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 data-pt="100% Gratuito" data-en="100% Free">100% Gratuito</h3>
+                    <p data-pt="Acesso completo a todas as funcionalidades sem custos ou mensalidades." data-en="Full access to all features without costs or monthly fees.">
+                        Acesso completo a todas as funcionalidades sem custos ou mensalidades.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
+    <!-- Equipa -->
+    <section class="team-section" id="equipa">
         <div class="container">
-            <div class="cta-content" data-aos="fade-up">
-                <h2 data-pt="Pronto para Fazer a Diferença?" data-en="Ready to Make a Difference?">
-                    Pronto para Fazer a Diferença?
-                </h2>
-                <p data-pt="Junta-te à comunidade Eco Habits e começa hoje a tua jornada rumo a um futuro mais sustentável. Cada pequeno passo conta." data-en="Join the Eco Habits community and start your journey towards a more sustainable future today. Every small step counts.">
-                    Junta-te à comunidade Eco Habits e começa hoje a tua jornada rumo a um futuro mais sustentável. Cada pequeno passo conta.
+            <div class="section-header">
+                <span class="section-tag" data-pt="Equipa" data-en="Team">Equipa</span>
+                <h2 class="section-title" data-pt="Quem Somos" data-en="Who We Are">Quem Somos</h2>
+                <p class="section-description" data-pt="Estudantes de Engenharia Informática do ISEP unidos pela paixão em criar soluções tecnológicas com impacto ambiental" data-en="ISEP Computer Engineering students united by passion to create technological solutions with environmental impact">
+                    Estudantes de Engenharia Informática do ISEP unidos pela paixão em criar soluções tecnológicas com impacto ambiental
                 </p>
-                <div class="cta-buttons">
-                    <a href="pages/funcionalidades.html" class="btn btn-light" data-pt="Explorar Funcionalidades" data-en="Explore Features">Explorar Funcionalidades</a>
-                    <a href="pages/equipa.html" class="btn btn-outline-light" data-pt="Conhecer a Equipa" data-en="Meet the Team">Conhecer a Equipa</a>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👨‍💻</div>
+                    <h3>Eduardo Fernandes</h3>
+                    <p class="member-role" data-pt="Desenvolvedor" data-en="Developer">Desenvolvedor</p>
+                    <p class="member-number">Nº 1250907</p>
+                    <p class="member-description" data-pt="Programação e integração das funcionalidades" data-en="Programming and feature integration">
+                        Programação e integração das funcionalidades
+                    </p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👨‍🎨</div>
+                    <h3>David Santos</h3>
+                    <p class="member-role" data-pt="Designer" data-en="Designer">Designer</p>
+                    <p class="member-number">Nº 1250845</p>
+                    <p class="member-description" data-pt="Design de interface e experiência do utilizador" data-en="Interface design and user experience">
+                        Design de interface e experiência do utilizador
+                    </p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👨‍🔬</div>
+                    <h3>Guilherme Barradas</h3>
+                    <p class="member-role" data-pt="Investigador" data-en="Researcher">Investigador</p>
+                    <p class="member-number">Nº 1251015</p>
+                    <p class="member-description" data-pt="Pesquisa e fundamentação teórica" data-en="Research and theoretical foundation">
+                        Pesquisa e fundamentação teórica
+                    </p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👨‍💼</div>
+                    <h3>Tiago Pinto</h3>
+                    <p class="member-role" data-pt="Gestor de Projeto" data-en="Project Manager">Gestor de Projeto</p>
+                    <p class="member-number">Nº 1251487</p>
+                    <p class="member-description" data-pt="Gestão e coordenação do projeto" data-en="Project management and coordination">
+                        Gestão e coordenação do projeto
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contexto Académico -->
+    <section class="context-section" id="contexto">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-pt="Projeto Académico" data-en="Academic Project">Projeto Académico</span>
+                <h2 class="section-title" data-pt="Contexto Académico" data-en="Academic Context">Contexto Académico</h2>
+            </div>
+            <div class="context-content">
+                <div class="context-text">
+                    <p data-pt="O Eco Habits foi desenvolvido no âmbito da unidade curricular de Laboratório/Projeto I (LAPR1) do curso de Engenharia Informática do Instituto Superior de Engenharia do Porto (ISEP)." data-en="Eco Habits was developed within the Laboratory/Project I (LAPR1) course unit of the Computer Engineering degree at Porto School of Engineering (ISEP).">
+                        O Eco Habits foi desenvolvido no âmbito da unidade curricular de Laboratório/Projeto I (LAPR1) do curso de Engenharia Informática do Instituto Superior de Engenharia do Porto (ISEP).
+                    </p>
+                    <p data-pt="Este projeto representa a aplicação prática dos conhecimentos adquiridos, abrangendo programação, trabalho em equipa, gestão de projetos e desenvolvimento de soluções tecnológicas com impacto social." data-en="This project represents the practical application of acquired knowledge, covering programming, teamwork, project management and development of technological solutions with social impact.">
+                        Este projeto representa a aplicação prática dos conhecimentos adquiridos, abrangendo programação, trabalho em equipa, gestão de projetos e desenvolvimento de soluções tecnológicas com impacto social.
+                    </p>
+                </div>
+                <div class="context-info">
+                    <div class="info-card">
+                        <div class="info-icon">🎓</div>
+                        <h3 data-pt="Curso" data-en="Course">Curso</h3>
+                        <p data-pt="Engenharia Informática" data-en="Computer Engineering">Engenharia Informática</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🏫</div>
+                        <h3 data-pt="Instituição" data-en="Institution">Instituição</h3>
+                        <p>ISEP</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📅</div>
+                        <h3 data-pt="Ano Letivo" data-en="Academic Year">Ano Letivo</h3>
+                        <p>2025/2026</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">👩‍🏫</div>
+                        <h3 data-pt="Orientadora" data-en="Supervisor">Orientadora</h3>
+                        <p>Sandra Luna</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -310,7 +344,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
+                    <a href="#home" class="logo">
                         <span class="logo-icon">🌱</span>
                         <span class="logo-text">Eco Habits</span>
                     </a>
@@ -322,18 +356,19 @@
                     <div class="footer-column">
                         <h4 data-pt="Navegação" data-en="Navigation">Navegação</h4>
                         <ul>
-                            <li><a href="index.html" data-pt="Início" data-en="Home">Início</a></li>
-                            <li><a href="pages/sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
-                            <li><a href="pages/funcionalidades.html" data-pt="Funcionalidades" data-en="Features">Funcionalidades</a></li>
-                            <li><a href="pages/equipa.html" data-pt="Equipa" data-en="Team">Equipa</a></li>
+                            <li><a href="#home" data-pt="Início" data-en="Home">Início</a></li>
+                            <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+                            <li><a href="#funcionalidades" data-pt="Funcionalidades" data-en="Features">Funcionalidades</a></li>
+                            <li><a href="#equipa" data-pt="Equipa" data-en="Team">Equipa</a></li>
+                            <li><a href="#contexto" data-pt="Contexto" data-en="Context">Contexto</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4 data-pt="Projeto" data-en="Project">Projeto</h4>
                         <ul>
-                            <li><a href="pages/contexto.html" data-pt="Contexto Académico" data-en="Academic Context">Contexto Académico</a></li>
                             <li><span data-pt="LAPR1 - ISEP" data-en="LAPR1 - ISEP">LAPR1 - ISEP</span></li>
                             <li><span data-pt="Ano Letivo 2025/2026" data-en="Academic Year 2025/2026">Ano Letivo 2025/2026</span></li>
+                            <li><span data-pt="Orientadora: Sandra Luna" data-en="Supervisor: Sandra Luna">Orientadora: Sandra Luna</span></li>
                         </ul>
                     </div>
                 </div>
@@ -345,56 +380,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/aos.js"></script>
-    <script src="js/main.js"></script>
-    
-    <!-- Script do Modal -->
-    <script>
-        // Elementos do modal
-        const installModal = document.getElementById('installModal');
-        const installBtn = document.getElementById('installBtn');
-        const installAppBtn = document.getElementById('installAppBtn');
-        const closeModal = document.getElementById('closeModal');
-        const storeBtns = document.querySelectorAll('.store-btn');
-
-        // Função para abrir o modal
-        function openModal() {
-            installModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Função para fechar o modal
-        function closeModalFunc() {
-            installModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Event listeners
-        installBtn.addEventListener('click', openModal);
-        installAppBtn.addEventListener('click', openModal);
-        closeModal.addEventListener('click', closeModalFunc);
-
-        // Fechar modal ao clicar fora
-        installModal.addEventListener('click', function(e) {
-            if (e.target === installModal) {
-                closeModalFunc();
-            }
-        });
-
-        // Fechar modal com tecla ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && installModal.classList.contains('active')) {
-                closeModalFunc();
-            }
-        });
-
-        // Botões das stores (não fazem nada, apenas visual)
-        storeBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                console.log('App em desenvolvimento - Store:', this.dataset.store);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
