@@ -801,39 +801,61 @@ section {
 .store-btn {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
+    justify-content: center;
+    padding: 0.5rem;
     border-radius: 15px;
     border: 2px solid var(--gray-200);
     background: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-align: left;
 }
 
 .store-btn:hover {
     border-color: var(--primary-green);
     transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
-.store-icon {
-    font-size: 2.5rem;
+.store-badge {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.store-btn-custom {
+    justify-content: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1.25rem;
+}
+
+.store-custom-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--white-50);
+    border-radius: 12px;
     flex-shrink: 0;
 }
 
-.store-info h3 {
+.store-custom-info {
+    text-align: left;
+}
+
+.store-custom-info h3 {
     font-size: 0.8rem;
     color: var(--gray-600);
     margin-bottom: 0.25rem;
     font-weight: 500;
 }
 
-.store-info p {
+.store-custom-info p {
     font-size: 1.1rem;
     color: var(--gray-900);
     font-weight: 700;
+    margin: 0;
 }
-
 .modal-note {
     text-align: center;
     margin-top: 1.5rem;
